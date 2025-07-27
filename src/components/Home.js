@@ -123,7 +123,7 @@ const Home = ({ searchQuery, onSearch, onSectionChange }) => {
         
         <div className="hero-image" data-aos="fade-left">
           <img 
-            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            src="https://avonriverventures.com/wp-content/uploads/2023/06/Healthcare-Financial-Management-scaled.jpg" 
             alt="Healthcare"
           />
         </div>

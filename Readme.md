@@ -34,14 +34,13 @@ A modern, responsive hospital finder application built with React JS, featuring 
 - **Touch-Friendly**: Easy navigation on mobile devices
 - **Modern UI**: Clean, professional healthcare interface
 
-## 🛠️ Technology Stack
-
-- **React 18.2.0** - Modern React with hooks and functional components
-- **React Router DOM 6.8.0** - Client-side routing
-- **AOS (Animate On Scroll)** - Smooth animations and transitions
-- **Font Awesome** - Professional icons
-- **CSS3** - Modern styling with Flexbox and Grid
-- **JavaScript ES6+** - Modern JavaScript features
+### 🛠️ Technology Stack
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![AOS](https://img.shields.io/badge/AOS-%234285F4.svg?style=for-the-badge&logo=javascript&logoColor=white)
+![Font Awesome](https://img.shields.io/badge/Font_Awesome-%23339AF0.svg?style=for-the-badge&logo=fontawesome&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ## 📁 Project Structure
 
@@ -64,7 +63,7 @@ Hospital/
 │   ├── index.js               # React entry point
 │   └── index.css              # Global styles
 ├── package.json               # Dependencies and scripts
-└── README-React.md           # This documentation
+└── README.md                  # This documentation
 ```
 
 ## 🚀 Getting Started
@@ -94,7 +93,7 @@ Hospital/
 - `npm start` - Runs the app in development mode
 - `npm build` - Builds the app for production
 - `npm test` - Launches the test runner
-- `npm eject` - Ejects from Create React App (not recommended)
+
 
 ## 🏗️ Component Architecture
 
@@ -227,10 +226,9 @@ npm run build
 ```
 
 ### Deploy Options
-- **Netlify**: Drag and drop the `build` folder
+
 - **Vercel**: Connect your GitHub repository
-- **Firebase**: Use Firebase Hosting
-- **AWS S3**: Upload to S3 bucket
+
 
 ## 🔮 Future Enhancements
 
@@ -251,30 +249,7 @@ npm run build
 - **Testing**: Unit and integration tests
 - **PWA**: Progressive Web App capabilities
 
-## 🐛 Troubleshooting
 
-### Common Issues
-
-1. **Port Already in Use**
-   ```bash
-   # Kill the process using port 3000
-   npx kill-port 3000
-   # Or use a different port
-   PORT=3001 npm start
-   ```
-
-2. **Module Not Found**
-   ```bash
-   # Clear node_modules and reinstall
-   rm -rf node_modules package-lock.json
-   npm install
-   ```
-
-3. **Build Errors**
-   ```bash
-   # Clear build cache
-   npm run build -- --reset-cache
-   ```
 
 ### Browser Compatibility
 - **Chrome**: 60+
