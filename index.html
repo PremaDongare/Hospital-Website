@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Finder - Find Doctors & Hospitals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-hospital-alt"></i>
+                <span>Hospital Finder</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#doctors" class="nav-link" data-section="doctors">Doctors</a>
+                <a href="#hospitals" class="nav-link" data-section="hospitals">Hospitals</a>
+                <a href="#appointments" class="nav-link" data-section="appointments">Appointments</a>
+            </div>
+            <div class="nav-actions">
+                <div class="notification-bell" id="notificationBell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notificationBadge">3</span>
+                </div>
+                <button class="btn-primary" id="loginBtn">Login</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero-section">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>Find the Best Doctors & Hospitals</h1>
+                    <p>Connect with healthcare professionals and medical facilities in your area</p>
+                    
+                    <!-- Unified Search Bar -->
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="unifiedSearch" placeholder="Search doctors, hospitals, specializations, or cities...">
+                            <button class="search-btn" id="searchBtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Healthcare">
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-section">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-user-md"></i>
+                    <h3>500+</h3>
+                    <p>Doctors</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-hospital"></i>
+                    <h3>50+</h3>
+                    <p>Hospitals</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-users"></i>
+                    <h3>10K+</h3>
+                    <p>Patients</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-star"></i>
+                    <h3>4.8</h3>
+                    <p>Rating</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section id="doctors" class="section">
+            <div class="section-header">
+                <h2>Find Doctors</h2>
+                <p>Browse through our network of qualified healthcare professionals</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="specializationFilter">Specialization:</label>
+                    <select id="specializationFilter">
+                        <option value="">All Specializations</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="hospitalFilter">Hospital:</label>
+                    <select id="hospitalFilter">
+                        <option value="">All Hospitals</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="experienceFilter">Experience:</label>
+                    <select id="experienceFilter">
+                        <option value="">All Experience</option>
+                        <option value="0-5">0-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10-15">10-15 years</option>
+                        <option value="15+">15+ years</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="ratingFilter">Rating:</label>
+                    <select id="ratingFilter">
+                        <option value="">All Ratings</option>
+                        <option value="4-5">4+ Stars</option>
+                        <option value="3-4">3+ Stars</option>
+                        <option value="2-3">2+ Stars</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Doctors Grid -->
+            <div class="doctors-grid" id="doctorsGrid"></div>
+        </section>
+
+        <!-- Hospitals Section -->
+        <section id="hospitals" class="section">
+            <div class="section-header">
+                <h2>Hospitals & Clinics</h2>
+                <p>Discover healthcare facilities in your area</p>
+            </div>
+
+            <!-- Hospital Filters -->
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="hospitalTypeFilter">Type:</label>
+                    <select id="hospitalTypeFilter">
+                        <option value="">All Types</option>
+                        <option value="Government">Government</option>
+                        <option value="Private">Private</option>
+                        <option value="Clinic">Clinic</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="hospitalLocationFilter">Location:</label>
+                    <select id="hospitalLocationFilter">
+                        <option value="">All Locations</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Hospitals Grid -->
+            <div class="hospitals-grid" id="hospitalsGrid"></div>
+        </section>
+
+        <!-- Appointments Section -->
+        <section id="appointments" class="section">
+            <div class="section-header">
+                <h2>My Appointments</h2>
+                <p>Manage your healthcare appointments</p>
+            </div>
+
+            <div class="appointments-container">
+                <div class="appointments-list" id="appointmentsList">
+                    <!-- Appointments will be populated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Hospital Finder</h3>
+                <p>
+                    Hospital Finder is a comprehensive healthcare platform dedicated to connecting patients 
+                    with the best doctors and hospitals in their area. We believe in making healthcare 
+                    accessible, transparent, and convenient for everyone.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Doctors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Hospitals</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Patients</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#doctors">Find Doctors</a></li>
+                    <li><a href="#hospitals">Hospitals</a></li>
+                    <li><a href="#appointments">Appointments</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li>Doctor Search</li>
+                    <li>Hospital Directory</li>
+                    <li>Appointment Booking</li>
+                    <li>Health Information</li>
+                    <li>Emergency Contacts</li>
+                    <li>Telemedicine Support</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Support</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@hospitalfinder.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Healthcare Ave, Medical District</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Support Available</span>
+                    </div>
+                </div>
+                <button class="btn-primary contact-btn" onclick="app.showContactModal()">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Hospital Finder. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="close-btn" id="closeNotifications">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list" id="notificationList">
+            <!-- Notifications will be populated here -->
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Book Appointment</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
